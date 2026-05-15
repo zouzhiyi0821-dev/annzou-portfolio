@@ -1,26 +1,43 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-cream: #f0ebe0;
+  --bg-cream-deep: #e5dcc7;
+  --bg-ink: #1a1815;
+  --text-ink: #1a1815;
+  --text-muted: #6b655b;
+  --text-inverse: #f0ebe0;
+  --accent-red: #b83a2b;
+  --accent-coral: #d46a4a;
+  --stroke-hairline: #c8bfad;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-cream: var(--bg-cream);
+  --color-cream-deep: var(--bg-cream-deep);
+  --color-ink: var(--bg-ink);
+  --color-muted: var(--text-muted);
+  --color-accent: var(--accent-red);
+  --color-coral: var(--accent-coral);
+  --color-hairline: var(--stroke-hairline);
+  --font-mono: var(--font-jetbrains-mono);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-cream);
+  color: var(--text-ink);
+  font-family: var(--font-jetbrains-mono), ui-monospace, monospace;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
 }
