@@ -1,7 +1,7 @@
 /** Explicit gallery filenames per project (supports mixed .jpg / .png) */
 const GALLERY_FILES: Record<string, string[]> = {
   semir: ["01.png", "02.jpg", "03.png"],
-  "amillex-geo": ["02.png"],
+  "amillex-geo": ["01.png"],
   "fear-of-death": ["01.jpg", "02.jpg"],
   glowguard: ["01.png", "02.png", "03.png"],
   "space-penguin": ["01.png", "02.jpg", "03.jpg"],
