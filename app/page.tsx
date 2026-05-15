@@ -106,9 +106,6 @@ export default async function Home({ searchParams }: Props) {
             <div className="relative aspect-[3/4] overflow-hidden bg-cream-deep">
               <PortraitImage src="/images/about-portrait.jpg" alt="Portrait" layoutKey="about-portrait" />
             </div>
-            {copy.about.photoCaption ? (
-              <p className={`mt-3 text-sm italic text-muted ${serif}`}>{copy.about.photoCaption}</p>
-            ) : null}
           </div>
           <div>
             <h2 className={`${serif} text-[clamp(40px,6vw,88px)] font-bold leading-none`}>

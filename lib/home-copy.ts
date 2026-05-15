@@ -18,7 +18,6 @@ export type HomeCopy = {
     section: string;
     heading: [string, string, string];
     body: string;
-    photoCaption?: string;
   };
   work: { section: string; meta: string; title: [string, string]; sliderHint: string };
   index: {
@@ -59,7 +58,6 @@ export const homeCopy: Record<Lang, HomeCopy> = {
       section: "About",
       heading: ["A practice between", "Fashion, Marketing", "& AI."],
       body: "I trained as a fashion designer (BFA), then took a hard turn into business — finishing an MA in Marketing & Finance because I wanted my taste backed by numbers. Today I work where those worlds meet AI: prompting like a stylist, prototyping like a founder, shipping like an engineer.",
-      photoCaption: "Photographed at studio, Shanghai · 2026",
     },
     work: {
       section: "Selected Work",
@@ -128,7 +126,6 @@ export const homeCopy: Record<Lang, HomeCopy> = {
       section: "关于",
       heading: ["穿梭于", "时装、营销", "与 AI 之间。"],
       body: "武汉纺织大学服装设计本科（2018–22）。担任森马女装创意企划近两年，做季度趋势、色彩与主题。现于悉尼大学读市场营销与金融硕士——同时是 Amillex 的 GEO Growth 实习生，用 vibe coding 提效，尝试 Vibe Marketing。",
-      photoCaption: "上海工作室 · 2026",
     },
     work: {
       section: "精选作品",
