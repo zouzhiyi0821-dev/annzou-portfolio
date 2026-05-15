@@ -5,6 +5,8 @@
 export type ImageCrop = {
   objectPosition?: string;
   objectFit?: "cover" | "contain";
+  /** Slight zoom to crop baked-in letterboxing on cover art */
+  scale?: number;
 };
 
 export const imageLayout: Record<string, ImageCrop> = {
@@ -14,10 +16,10 @@ export const imageLayout: Record<string, ImageCrop> = {
   "cover:amillex-geo": { objectPosition: "50% 50%", objectFit: "cover" },
   "cover:unilever": { objectPosition: "50% 50%", objectFit: "cover" },
   "cover:max-mara": { objectPosition: "50% 40%", objectFit: "cover" },
-  "cover:prada-prisma": { objectPosition: "center center", objectFit: "contain" },
-  "cover:glowguard": { objectPosition: "center center", objectFit: "contain" },
+  "cover:prada-prisma": { objectPosition: "50% 45%", objectFit: "cover" },
+  "cover:glowguard": { objectPosition: "50% 48%", objectFit: "cover", scale: 1.12 },
   "cover:space-penguin": { objectPosition: "50% 50%", objectFit: "cover" },
-  "cover:hello-mom": { objectPosition: "center center", objectFit: "contain" },
+  "cover:hello-mom": { objectPosition: "50% 72%", objectFit: "cover", scale: 1.08 },
   "cover:fear-of-death": { objectPosition: "50% 30%", objectFit: "cover" },
   "cover:stylist": { objectPosition: "50% 35%", objectFit: "cover" },
   "cover:default": { objectPosition: "50% 50%", objectFit: "cover" },

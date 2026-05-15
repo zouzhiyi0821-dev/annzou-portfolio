@@ -40,8 +40,11 @@ export function ProjectCover({
         fill
         priority={priority}
         loading={priority ? undefined : loading}
-        className={crop.objectFit === "contain" ? "object-contain" : "object-cover"}
-        style={{ objectPosition: crop.objectPosition }}
+        className="object-cover"
+        style={{
+          objectPosition: crop.objectPosition ?? "center center",
+          transform: crop.scale ? `scale(${crop.scale})` : undefined,
+        }}
         sizes="480px"
         onError={() => setFailed(true)}
       />

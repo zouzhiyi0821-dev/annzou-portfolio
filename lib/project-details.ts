@@ -22,6 +22,7 @@ export type DetailBlock = {
 const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
   semir: {
     cn: {
+      heroSubtitle: "从缝纫机，到商业策略，再到终端。",
       meta: {
         date: "2022 Jul — 2023 Oct",
         category: "女装创意企划",
@@ -30,7 +31,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       },
       sectionCode: "001 SEMIR",
       problem:
-        "女装休闲线从趋势到陈列的链路存在损耗：设计意图常在打样、商品企划与终端呈现中被稀释。",
+        "女装休闲线从趋势到陈列的链路：设计意图常在打样、商品企划与终端呈现中被稀释。",
       role: [
         "主导每季 2–3 条系列的趋势、色彩与主题方向，输出可执行的企划文档。",
         "协同商品与视觉团队，把趋势语言落到 SKU 结构与终端陈列。",
@@ -50,7 +51,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
     },
     en: {
       heroTitle: ["Semir", "森马."],
-      heroSubtitle: "Youth fashion brand marketing strategy and campaign execution.",
+      heroSubtitle: "From the sewing machine — to commercial strategy — to the shop floor.",
       meta: {
         date: "Jul 2022 — Oct 2023",
         category: "Women's creative planning",
@@ -59,7 +60,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       },
       sectionCode: "001 SEMIR",
       problem:
-        "Casual womenswear lost intent between trend, sampling, merchandising and in-store presentation.",
+        "Women's casual: from trend to VM — design intent often diluted across sampling, merchandising and retail.",
       role: [
         "Led trend, colour and theme for 2–3 lines per season with actionable planning docs.",
         "Worked with merch and visual teams to carry narrative through SKU structure and VM.",
@@ -88,18 +89,18 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       },
       sectionCode: "002 AMILLEX",
       problem:
-        "AI 引擎的引用经常不可见：错误链接、语言漂移与隐性偏差会在 PR 团队发现前就损伤品牌可信度。缺少从 query → audit → strategy 的闭环。",
+        "品牌在 AI 搜索与对话里的「可见度」越来越像黑箱：用户看到什么、为何被吸引、叙事是否一致，往往缺少从 query → 表现 → 策略 的闭环。",
       role: [
-        "用 Cursor vibe coding 搭建 GEO 仪表盘：导入客户 URL，跨 AI 平台做引用审计。",
-        "把黑箱问题变成 PR 团队周末就能执行的检查清单与可视化报告。",
+        "用 Cursor vibe coding 搭建 GEO 仪表盘：导入客户 URL，跨 AI 平台分析内容如何吸引用户、被如何呈现。",
+        "把不可见的曝光与表述差异，变成 PR 团队周末就能执行的检查清单与可视化报告。",
       ],
       processSteps: [
         { title: "查询", body: "定义品牌 query 集与竞品对照，建立可重复的监测口径。" },
-        { title: "审计", body: "抓取 AI 引用、链接与表述，标记错误、漂移与缺口。" },
+        { title: "审计", body: "抓取 AI 回答中的表述、链接与推荐逻辑，标记吸引点、缺口与偏差。" },
         { title: "渲染", body: "CSV → HTML 仪表盘，周报视图与异常高亮。" },
-        { title: "简报", body: "客户可读的行动建议：修链、补内容、调叙事。" },
+        { title: "简报", body: "客户可读的行动建议：补内容、调叙事、强化用户吸引点。" },
       ],
-      outcomeQuote: "它把原本黑箱的 GEO 问题，变成了 PR 团队周末就能执行的检查清单。",
+      outcomeQuote: "它把「AI 如何吸引用户」从黑箱，变成了团队每周都能复盘的增长面板。",
       metrics: [
         { value: "5", label: "AI 平台监测", accent: true },
         { value: "Long-tail", label: "Query 覆盖" },
@@ -117,18 +118,18 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       },
       sectionCode: "002 AMILLEX",
       problem:
-        "AI citations are often invisible — bad links, language drift and bias hurt credibility before PR notices. No query → audit → strategy loop.",
+        "AI visibility is a black box — what users see, why they're drawn in, and whether the story holds together rarely maps to a query → performance → strategy loop.",
       role: [
-        "Vibe-coded GEO dashboards in Cursor: ingest URLs, audit citations across AI surfaces.",
-        "Turned a black box into a weekend checklist PR teams can actually run.",
+        "Vibe-coded GEO dashboards in Cursor: ingest URLs, analyse how AI surfaces attract users.",
+        "Turned invisible exposure gaps into a weekend checklist PR teams can actually run.",
       ],
       processSteps: [
         { title: "Query", body: "Brand + competitor query sets with repeatable monitoring rules." },
-        { title: "Audit", body: "Capture citations, links and phrasing — flag errors and gaps." },
+        { title: "Audit", body: "Capture answers, links and recommendation logic — flag attraction gaps and drift." },
         { title: "Render", body: "CSV → HTML dashboards with weekly views and alerts." },
-        { title: "Brief", body: "Plain-language actions: fix links, fill content, adjust narrative." },
+        { title: "Brief", body: "Plain-language actions: fill content, sharpen narrative, strengthen user pull." },
       ],
-      outcomeQuote: "It turned invisible GEO risk into a checklist PR can run every weekend.",
+      outcomeQuote: "It turned \"how AI attracts users\" from a black box into a weekly growth panel.",
       metrics: [
         { value: "5", label: "AI surfaces", accent: true },
         { value: "Long-tail", label: "Query coverage" },
@@ -146,22 +147,22 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       },
       sectionCode: "003 UNILEVER",
       problem:
-        "高端母婴市场 SKU 众多、Claims 复杂，品牌需要快速拆解竞品结构与 Claims 逻辑，支撑策略决策。",
+        "拼多多洗护市场 SKU 密集、价格带重叠；母婴品类 Claims 繁杂。品牌需要回答「如何吸引用户」，并把竞品结构快速转化为产品与市场动作。",
       role: [
-        "Top-100 SKU 拆解与 Claims 溯源，建立可检索的竞品数据库。",
-        "输出策略层可读的结构化洞察，支持市场与品牌团队讨论。",
+        "拆解拼多多洗护市场 Top-100 SKU，建立可检索的结构化数据库；用数据透视做品类/价格带/品牌横向与功效/规格/宣称纵向交叉对比，输出产品策略与卖点建议。",
+        "梳理母婴市场竞品 Claims 溯源，对照本品包装与传播表述，提出营销推广 claim 的调整方向，支撑品牌与市场团队决策。",
       ],
       processSteps: [
-        { title: "扫描", body: "梳理渠道与 SKU 清单，确定监测范围与优先级。" },
-        { title: "聚类", body: "按价格带、功效与 Claims 维度聚类，看清竞争格局。" },
-        { title: "追踪", body: "持续更新 Claims 与包装变化，标记异常与机会。" },
-        { title: "简报", body: "周报式输出：结构图 + 关键发现 + 策略提示。" },
+        { title: "扫描", body: "锁定拼多多洗护 Top-100 SKU 与母婴 Claims 监测清单，明确维度与优先级。" },
+        { title: "透视", body: "数据透视表横向（品类/价格/品牌）× 纵向（功效/规格/宣称）交叉，定位空白与机会带。" },
+        { title: "溯源", body: "Claims 逐条溯源与变更追踪，映射到本品包装、详情页与投放话术。" },
+        { title: "简报", body: "输出产品建议、卖点组合与 claim 调整方案，支持周会讨论与落地。" },
       ],
-      outcomeQuote: "把分散的 SKU 与 Claims 信息，变成团队每周都能打开的竞争地图。",
+      outcomeQuote: "把「如何吸引用户」落到可执行的 SKU 地图与 Claims 调整清单，而不仅是竞品列表。",
       metrics: [
         { value: "+25%", label: "决策效率", accent: true },
-        { value: "Top-100", label: "SKU 覆盖" },
-        { value: "100+", label: "Claims 条目" },
+        { value: "Top-100", label: "拼多多洗护 SKU" },
+        { value: "100+", label: "Claims 溯源" },
       ],
     },
     en: {
@@ -173,22 +174,22 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       },
       sectionCode: "003 UNILEVER",
       problem:
-        "Premium maternal & infant is SKU-heavy and claim-dense — the brand needed fast competitive structure and claim logic.",
+        "Pinduoduo personal care is SKU-dense with overlapping price tiers; maternal & infant claims are complex. The brand needed to answer how to win users — and turn competitive structure into product and market moves.",
       role: [
-        "Top-100 SKU disassembly + claim tracing into a searchable competitor database.",
-        "Structured insights strategists could use in weekly reviews.",
+        "Teardown of Top-100 Pinduoduo personal-care SKUs into a searchable database; pivot-table cross-analysis (category/price/brand × benefit/spec/claim) → product and positioning recommendations.",
+        "Maternal & infant claim tracing vs. competitors; mapped gaps to our packaging and comms, with concrete marketing-claim adjustment directions.",
       ],
       processSteps: [
-        { title: "Scan", body: "Mapped channels and SKU universe; set monitoring priorities." },
-        { title: "Cluster", body: "Clustered by price tier, benefit and claims to see the field." },
-        { title: "Track", body: "Updated packaging and claims; flagged shifts and openings." },
-        { title: "Brief", body: "Weekly maps + findings + implications for brand teams." },
+        { title: "Scan", body: "Scoped Top-100 PDD personal-care SKUs and maternal & infant claim watchlists." },
+        { title: "Pivot", body: "Horizontal × vertical pivot views to spot white space and opportunity tiers." },
+        { title: "Trace", body: "Claim lineage and change tracking → our pack, PDP copy and campaign language." },
+        { title: "Brief", body: "Product picks, selling-point bundles and claim-adjustment plans for weekly reviews." },
       ],
-      outcomeQuote: "Scattered SKU and claim data became a map the team could open every week.",
+      outcomeQuote: "\"How to win users\" became an actionable SKU map and claim-adjustment list — not just a competitor spreadsheet.",
       metrics: [
         { value: "+25%", label: "Decision speed", accent: true },
-        { value: "Top-100", label: "SKU coverage" },
-        { value: "100+", label: "Claim rows" },
+        { value: "Top-100", label: "PDD personal care" },
+        { value: "100+", label: "Claims traced" },
       ],
     },
   },
@@ -487,7 +488,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
         "亲人离世与医疗体验让我直面「身体如何承载时间与失去」，毕设由此展开。",
       role: [
         "将手术灯、监护仪等医疗符号转译为编织、拼贴与材料质感。",
-        "完成 15 套系列，叙事分「发生、恶化、回归」三幕。",
+        "完成毕业系列，叙事分「发生、恶化、回归」三幕。",
       ],
       processSteps: [
         { title: "概念", body: "记录对死亡的感悟并确定主题与材料语言。" },
@@ -497,9 +498,9 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       ],
       outcomeQuote: "死亡应被理解为生命循环中的一次转场，也是新的开始。",
       metrics: [
-        { value: "15", label: "套系列", accent: true },
-        { value: "3", label: "叙事阶段" },
+        { value: "3", label: "叙事幕", accent: true },
         { value: "BFA", label: "武汉纺织大学" },
+        { value: "2022", label: "毕业年份" },
       ],
     },
     en: {
@@ -514,7 +515,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
         "Loss and clinical experience asked how the body holds time and grief — the collection grew from that question.",
       role: [
         "Translated medical symbols into weave, collage and material texture.",
-        "15 looks in three acts: onset, worsening, return.",
+        "Full capstone collection in three acts: onset, worsening, return.",
       ],
       processSteps: [
         { title: "Concept", body: "Grief notes → theme and material language." },
@@ -524,9 +525,9 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       ],
       outcomeQuote: "Death as a passage in the life cycle — and a beginning, not only an end.",
       metrics: [
-        { value: "15", label: "Looks", accent: true },
-        { value: "3", label: "Acts" },
+        { value: "3", label: "Acts", accent: true },
         { value: "BFA", label: "Wuhan Textile Univ." },
+        { value: "2022", label: "Graduation" },
       ],
     },
   },

@@ -147,7 +147,7 @@ export const homeCopy: Record<Lang, HomeCopy> = {
         {
           n: "02",
           title: "Vibe Coding 与 AI 原型",
-          desc: "Vibe-coded 的 GEO 仪表盘，周末从想法到可上线产品。",
+          desc: "Vibe-coded GEO 仪表盘，洞察 AI 如何吸引用户。",
           slug: "amillex-geo",
         },
         {
