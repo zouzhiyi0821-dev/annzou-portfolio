@@ -1,73 +1,29 @@
 import Link from "next/link";
-import { ProjectCover } from "@/components/ProjectCover";
+import { PortraitImage } from "@/components/PortraitImage";
+import { LangAttr } from "@/components/LangAttr";
+import { SiteNav } from "@/components/SiteNav";
+import { WorkCarousel } from "@/components/WorkCarousel";
+import { homeCopy } from "@/lib/home-copy";
+import { parseLang, withLang } from "@/lib/i18n";
 import { projects, siteLinks } from "@/lib/projects";
 
-const MARQUEE = [
-  "Fashion Design",
-  "Vibe Coding",
-  "Brand Strategy",
-  "Prompt Craft",
-  "Vibe Marketing",
-  "AI Native",
-];
+type Props = {
+  searchParams: Promise<{ lang?: string }>;
+};
 
-const INDEX_ROWS = [
-  {
-    n: "01",
-    title: "Brand Identity & Visual Direction",
-    desc: "Logo systems, lookbooks, packaging — fashion-trained eye.",
-  },
-  {
-    n: "02",
-    title: "Vibe Coding & AI Prototyping",
-    desc: "Cursor, Claude, Next.js. Idea → working prototype in days.",
-  },
-  {
-    n: "03",
-    title: "Marketing & Growth Strategy",
-    desc: "Brand positioning, GTM, narrative. MA in Marketing & Finance.",
-  },
-  {
-    n: "04",
-    title: "AI Direction & Prompt Craft",
-    desc: "Workflows, system prompts, evals. Speak fluent LLM.",
-  },
-];
-
-function coverPath(slug: string) {
-  return `/images/covers/${slug}.jpg`;
-}
-
-export default function Home() {
-  const marqueeItems = [...MARQUEE, ...MARQUEE];
+export default async function Home({ searchParams }: Props) {
+  const { lang: langParam } = await searchParams;
+  const lang = parseLang(langParam);
+  const copy = homeCopy[lang];
+  const marqueeItems = [...copy.marquee, ...copy.marquee];
+  const serif = lang === "cn" ? "font-[family-name:var(--font-noto-serif)]" : "font-serif";
 
   return (
     <main className="min-h-screen bg-cream text-ink">
-      <nav className="flex items-center justify-between border-b border-hairline px-16 py-7">
-        <Link href="/" className="text-[13px] font-medium uppercase tracking-[0.08em]">
-          ANN · ZOU
-        </Link>
-        <div className="flex items-center gap-8 text-[11px] uppercase tracking-[0.08em] text-ink">
-          <a href="#index" className="hover:text-accent">
-            Index
-          </a>
-          <a href="#work" className="hover:text-accent">
-            Work
-          </a>
-          <a href="#about" className="hover:text-accent">
-            About
-          </a>
-          <a href="#contact" className="hover:text-accent">
-            Contact →
-          </a>
-          <span className="text-muted">|</span>
-          <span className="text-muted">EN</span>
-          <span>/</span>
-          <span>中</span>
-        </div>
-      </nav>
+      <LangAttr lang={lang} />
+      <SiteNav lang={lang} copy={copy.nav} pathname="/" search={lang === "cn" ? "lang=cn" : undefined} />
 
-      <div className="overflow-hidden border-b border-hairline py-3">
+      <div className="overflow-hidden border-b border-hairline bg-cream py-3">
         <div className="marquee-track flex w-max gap-8 whitespace-nowrap px-16 text-[11px] uppercase tracking-[0.08em] text-muted">
           {marqueeItems.map((item, i) => (
             <span key={`${item}-${i}`} className="flex items-center gap-8">
@@ -77,176 +33,189 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="border-b border-hairline">
-        <div className="relative grid min-h-[520px] grid-cols-1 lg:grid-cols-[1fr_45%]">
-          <div className="relative bg-cream px-16 pb-8 pt-10">
-            <div className="mb-6 flex justify-between text-[11px] uppercase tracking-[0.08em] text-muted">
-              <span>Issue № 01</span>
-              <span>Portfolio MMXXVI</span>
-              <span>English Edition</span>
-            </div>
-            <div className="mb-10 h-px bg-hairline" />
-            <h1 className="text-[clamp(72px,12vw,160px)] font-bold leading-[0.9] tracking-tight">
-              Ann
-              <br />
-              Zou.
-            </h1>
-          </div>
-          <div className="relative bg-ink">
-            <div className="absolute inset-0 bg-coral/30" />
-            <div className="relative flex h-full min-h-[400px] items-center justify-center p-8">
-              <div className="relative flex h-[min(78vh,720px)] w-full max-w-[520px] items-center justify-center overflow-hidden border border-hairline/40 bg-cream-deep">
-                <span className="px-4 text-center text-[10px] uppercase tracking-widest text-muted">
-                  Add public/images/hero-portrait.jpg
-                </span>
-              </div>
-            </div>
+      <section className="relative overflow-hidden border-b border-hairline bg-cream">
+        <div className="absolute inset-0 grid grid-cols-1 lg:grid-cols-[55%_45%]">
+          <div className="bg-cream" />
+          <div className="relative min-h-[min(52vh,480px)] lg:min-h-full">
+            <PortraitImage src="/images/hero-portrait.jpg" alt="Ann Zou" priority layoutKey="hero-portrait" />
+            <div className="absolute inset-0 bg-coral/25" />
+            <div className="absolute left-0 top-1/2 hidden h-[min(360px,50vh)] w-1.5 -translate-y-1/2 bg-accent lg:block" />
           </div>
         </div>
 
-        <div className="border-t border-hairline px-16 py-8">
-          <div className="mb-6 h-px bg-hairline" />
-          <p className="mb-8 max-w-3xl text-sm leading-relaxed text-muted">
-            Zhiyi Zou — Fashion design × marketing & finance × AI-native creative.
-          </p>
-          <div className="grid gap-8 border-t border-hairline pt-8 md:grid-cols-3">
-            <div>
-              <p className="mb-2 text-[11px] uppercase tracking-widest text-muted">01 — Manifesto</p>
-              <p className="text-sm leading-relaxed">
-                Trained at the cutting table. Refined at the trading floor. Writing prompts like
-                seams — every line earns its place.
-              </p>
+        <div className="relative z-10">
+          <div className="flex justify-between px-16 pt-10 text-[11px] uppercase tracking-[0.08em] text-muted">
+            <span>{copy.hero.issue}</span>
+            <span className="hidden text-center lg:inline">{copy.hero.portfolio}</span>
+            <span>{copy.hero.edition}</span>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-[55%_45%]">
+            <div className="px-16 pb-4 pt-4">
+              <div className="mb-10 h-px bg-hairline" />
+              <h1
+                className={`${serif} text-[clamp(88px,14vw,200px)] font-black leading-[0.88] tracking-tight`}
+              >
+                Ann
+                <br />
+                Zou.
+              </h1>
             </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-widest text-muted">Available—FW &apos;26</p>
-              <p className="mt-2 text-sm">Open to roles</p>
-            </div>
-            <div className="md:text-right">
-              <p className="text-[11px] uppercase tracking-widest text-muted">Scroll ↓</p>
+            <div className="min-h-[80px] lg:min-h-0" aria-hidden />
+          </div>
+
+          <div className="border-t border-hairline">
+            <div className="grid grid-cols-1 lg:grid-cols-[55%_45%]">
+              <div className="px-16 py-8">
+                <div className="mb-6 h-px bg-hairline" />
+                <p
+                  className={`mb-8 max-w-2xl whitespace-pre-line text-[22px] font-light leading-relaxed text-muted ${lang === "cn" ? "font-[family-name:var(--font-noto-serif)]" : ""}`}
+                >
+                  {copy.hero.subtitle}
+                </p>
+                <div className="grid gap-8 border-t border-hairline pt-8 md:grid-cols-2">
+                  <div>
+                    <p className="mb-2 text-[11px] uppercase tracking-widest text-muted">
+                      {copy.hero.manifestoLabel}
+                    </p>
+                    <p className={`text-sm italic leading-relaxed ${serif}`}>{copy.hero.manifesto}</p>
+                  </div>
+                  <div>
+                    <p className="text-[11px] uppercase tracking-widest text-muted">
+                      {copy.hero.availableLabel}
+                    </p>
+                    <p className="mt-2 text-sm italic">{copy.hero.availableValue}</p>
+                  </div>
+                </div>
+              </div>
+              <div className="hidden items-end justify-end px-16 pb-8 lg:flex">
+                <p className="text-[11px] uppercase tracking-widest text-muted">{copy.hero.scroll}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="about" className="border-b border-hairline px-16 py-16">
+      <section id="about" className="border-b border-hairline bg-cream px-16 py-16">
         <div className="mb-8 flex items-end justify-between border-b border-hairline pb-4 text-[11px] uppercase tracking-widest text-muted">
           <span>02</span>
-          <span>About</span>
+          <span>{copy.about.section}</span>
           <span>§ 02.00–02.04</span>
         </div>
         <div className="grid gap-12 lg:grid-cols-[320px_1fr]">
-          <div className="relative flex aspect-[3/4] items-center justify-center overflow-hidden bg-cream-deep">
-            <span className="px-4 text-center text-[10px] uppercase tracking-widest text-muted">
-              Add public/images/about-portrait.jpg
-            </span>
+          <div>
+            <div className="relative aspect-[3/4] overflow-hidden bg-cream-deep">
+              <PortraitImage src="/images/about-portrait.jpg" alt="Portrait" layoutKey="about-portrait" />
+            </div>
+            {copy.about.photoCaption ? (
+              <p className={`mt-3 text-sm italic text-muted ${serif}`}>{copy.about.photoCaption}</p>
+            ) : null}
           </div>
           <div>
-            <h2 className="text-[clamp(40px,6vw,72px)] font-bold leading-none">
-              A practice between
+            <h2 className={`${serif} text-[clamp(40px,6vw,88px)] font-bold leading-none`}>
+              {copy.about.heading[0]}
               <br />
-              fashion, finance
+              <span className="italic">{copy.about.heading[1]}</span>
               <br />
-              & AI.
+              {copy.about.heading[2]}
             </h2>
-            <p className="mt-8 max-w-xl text-sm leading-relaxed text-muted">
-              I trained as a fashion designer (BFA), then took a hard turn into business —
-              finishing an MA in Marketing & Finance because I wanted my taste backed by numbers.
-              Today I work where those worlds meet AI: prompting like a stylist, prototyping like a
-              founder, shipping like an engineer.
+            <p className={`mt-8 max-w-xl text-lg leading-relaxed text-muted ${serif}`}>
+              {copy.about.body}
             </p>
           </div>
         </div>
       </section>
 
-      <section id="work" className="border-b border-hairline px-16 py-16">
+      <section id="work" className="border-b border-hairline bg-cream px-16 py-16">
         <div className="mb-8 flex items-end justify-between border-b border-hairline pb-4 text-[11px] uppercase tracking-widest text-muted">
           <span>03</span>
-          <span>Selected Work</span>
-          <span>10 cases — FW 23 to date</span>
+          <span>{copy.work.section}</span>
+          <span>{copy.work.meta}</span>
         </div>
-        <h2 className="mb-10 text-[clamp(48px,8vw,96px)] font-bold leading-none">
-          Selected
+        <h2 className={`${serif} mb-10 text-[clamp(48px,8vw,96px)] font-bold leading-none`}>
+          {copy.work.title[0]}
           <br />
-          Work ——
+          <span className="italic">{copy.work.title[1]}</span>
         </h2>
-        <div className="-mx-16 overflow-x-auto px-16 pb-4">
-          <div className="flex w-max gap-6">
-            {projects.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/work/${p.slug}`}
-                className="group w-[min(85vw,420px)] shrink-0 border border-hairline bg-cream p-4 transition-colors hover:border-ink"
-              >
-                <ProjectCover src={coverPath(p.slug)} alt={p.title} />
-                <p className="mt-4 text-[10px] uppercase tracking-widest text-muted">
-                  Nº {String(p.order).padStart(2, "0")} — {p.year}
-                </p>
-                <p className="mt-2 text-2xl font-bold group-hover:text-accent">{p.title}.</p>
-                <p className="mt-2 line-clamp-2 text-sm text-muted">{p.subtitle}</p>
-                <p className="mt-4 text-[11px] uppercase tracking-widest">View →</p>
-              </Link>
-            ))}
-          </div>
-        </div>
-        <p className="mt-6 text-[11px] uppercase tracking-widest text-muted">
-          ← Drag to scroll → · 01 / 10 · 10 cases
-        </p>
+        <WorkCarousel lang={lang} projects={projects} serif={serif} />
       </section>
 
-      <section id="index" className="border-b border-hairline px-16 py-16">
+      <section id="index" className="relative z-20 border-b border-hairline bg-cream px-16 py-16">
         <div className="mb-8 flex items-end justify-between border-b border-hairline pb-4 text-[11px] uppercase tracking-widest text-muted">
           <span>05</span>
-          <span>Index of Services</span>
-          <span>Four practices</span>
+          <span>{copy.index.section}</span>
+          <span>{copy.index.meta}</span>
         </div>
-        <h2 className="mb-12 text-[clamp(48px,8vw,96px)] font-bold leading-none">Index.</h2>
+        <h2 className={`${serif} mb-12 text-[clamp(48px,8vw,96px)] font-bold leading-none`}>
+          {copy.index.title}
+        </h2>
         <ul className="divide-y divide-hairline border-t border-hairline">
-          {INDEX_ROWS.map((row) => (
-            <li key={row.n} className="grid grid-cols-[48px_1fr_auto] items-center gap-6 py-6">
-              <span className="text-sm text-muted">{row.n}</span>
-              <div>
-                <p className="font-medium">{row.title}</p>
-                <p className="mt-1 text-sm text-muted">{row.desc}</p>
-              </div>
-              <span className="text-xl">→</span>
+          {copy.index.rows.map((row) => (
+            <li key={row.n}>
+              <Link
+                href={withLang(`/work/${row.slug}`, lang)}
+                className="group grid cursor-pointer grid-cols-[48px_1fr_auto] items-center gap-6 py-6 transition-colors hover:bg-cream-deep/60"
+              >
+                <span className="text-sm text-muted">{row.n}</span>
+                <div>
+                  <p className={`text-2xl font-bold group-hover:text-accent ${serif}`}>{row.title}</p>
+                  <p className={`mt-1 text-sm text-muted ${serif}`}>{row.desc}</p>
+                </div>
+                <span className="text-xl transition-transform group-hover:translate-x-1">→</span>
+              </Link>
             </li>
           ))}
         </ul>
       </section>
 
-      <footer id="contact" className="px-16 py-20">
+      <footer id="contact" className="bg-cream px-16 py-20">
         <div className="mb-8 flex items-end justify-between border-b border-hairline pb-4 text-[11px] uppercase tracking-widest text-muted">
           <span>06</span>
-          <span>Contact</span>
-          <span>End of issue</span>
+          <span>{copy.contact.section}</span>
+          <span>{copy.contact.meta}</span>
         </div>
-        <h2 className="text-[clamp(48px,8vw,96px)] font-bold leading-none">
-          Let&apos;s make
+        <h2 className={`${serif} text-[clamp(48px,8vw,120px)] font-bold leading-none`}>
+          <span className="italic">{copy.contact.title[0]}</span>
           <br />
-          something.
+          {copy.contact.title[1]}
         </h2>
-        <div className="mt-12 flex flex-wrap gap-8 text-sm">
-          <a href={`mailto:${siteLinks.email}`} className="underline underline-offset-4 hover:text-accent">
-            {siteLinks.email}
-          </a>
-          <a
-            href={siteLinks.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 hover:text-accent"
-          >
-            LinkedIn ↗
-          </a>
-          <a
-            href={siteLinks.xiaohongshu}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline underline-offset-4 hover:text-accent"
-          >
-            Xiaohongshu ↗
-          </a>
+        <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_320px]">
+          <div>
+            <p className="text-[11px] uppercase tracking-widest text-muted">{copy.contact.emailLabel}</p>
+            <a
+              href={`mailto:${siteLinks.email}`}
+              className={`mt-3 block text-[clamp(32px,5vw,56px)] font-bold italic hover:text-accent ${serif}`}
+            >
+              {siteLinks.email}
+            </a>
+            <p className={`mt-4 max-w-lg text-base italic text-muted ${serif}`}>{copy.contact.emailNote}</p>
+          </div>
+          <div>
+            <p className="text-[11px] uppercase tracking-widest text-muted">{copy.contact.linksLabel}</p>
+            <div className="mt-4 flex flex-col gap-3 text-sm">
+              <a
+                href={siteLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent"
+              >
+                {copy.contact.linkedin}
+              </a>
+              <a
+                href={siteLinks.xiaohongshu}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-accent"
+              >
+                {copy.contact.xhs}
+              </a>
+            </div>
+          </div>
         </div>
-        <p className="mt-16 text-[11px] text-muted">© 2026 Ann Zou — Built with Cursor + Next.js</p>
+        <div className="mt-16 flex flex-wrap justify-between gap-4 border-t border-hairline pt-6 text-[11px] text-muted">
+          <span>{copy.contact.footer[0]}</span>
+          <span>{copy.contact.footer[1]}</span>
+          <span>{copy.contact.footer[2]}</span>
+        </div>
       </footer>
     </main>
   );

@@ -21,6 +21,8 @@
   --color-coral: var(--accent-coral);
   --color-hairline: var(--stroke-hairline);
   --font-mono: var(--font-jetbrains-mono);
+  --font-serif: var(--font-playfair);
+  --font-serif-cn: var(--font-noto-serif);
 }
 
 body {
@@ -40,4 +42,20 @@ body {
 
 .marquee-track {
   animation: marquee 40s linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
 }
