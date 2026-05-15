@@ -12,7 +12,7 @@ export const imageLayout: Record<string, ImageCrop> = {
   "about-portrait": { objectPosition: "50% 25%", objectFit: "cover" },
   "cover:semir": { objectPosition: "50% 35%", objectFit: "cover" },
   "cover:amillex-geo": { objectPosition: "50% 50%", objectFit: "cover" },
-  "cover:unilever-karicare": { objectPosition: "50% 50%", objectFit: "cover" },
+  "cover:unilever": { objectPosition: "50% 50%", objectFit: "cover" },
   "cover:max-mara": { objectPosition: "50% 40%", objectFit: "cover" },
   "cover:prada-prisma": { objectPosition: "center center", objectFit: "contain" },
   "cover:glowguard": { objectPosition: "center center", objectFit: "contain" },

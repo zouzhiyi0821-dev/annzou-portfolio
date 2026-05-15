@@ -136,7 +136,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       ],
     },
   },
-  "unilever-karicare": {
+  unilever: {
     cn: {
       meta: {
         date: "2024 — 2026",
@@ -144,7 +144,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
         keywords: "SKU / 宣称 / 竞品",
         linkStatus: "内部项目 (无外链)",
       },
-      sectionCode: "003 KARICARE",
+      sectionCode: "003 UNILEVER",
       problem:
         "高端母婴市场 SKU 众多、宣称复杂，品牌需要快速拆解竞品结构与宣称逻辑，支撑策略决策。",
       role: [
@@ -171,7 +171,7 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
         keywords: "SKU / Claims / Competitors",
         linkStatus: "Internal project",
       },
-      sectionCode: "003 KARICARE",
+      sectionCode: "003 UNILEVER",
       problem:
         "Premium maternal & infant is SKU-heavy and claim-dense — the brand needed fast competitive structure and claim logic.",
       role: [

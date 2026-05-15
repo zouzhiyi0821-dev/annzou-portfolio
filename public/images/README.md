@@ -21,7 +21,7 @@ Detail page top band is **1440×810** (16:9). Use a wide crop of the same projec
 |----------|---------|
 | `semir.jpg` | Semir 森马 |
 | `amillex-geo.png` | Amillex GEO |
-| `unilever-karicare.png` | Unilever Karicare |
+| `unilever.png` | Unilever |
 | `max-mara.png` | MAX MARA |
 | `prada-prisma.png` | Prada Prisma |
 | `glowguard.png` | GlowGuard |

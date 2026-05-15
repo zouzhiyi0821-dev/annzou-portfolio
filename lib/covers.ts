@@ -2,7 +2,7 @@
 export const COVER_EXT: Record<string, "jpg" | "png" | "webp"> = {
   semir: "jpg",
   "amillex-geo": "png",
-  "unilever-karicare": "png",
+  unilever: "png",
   "max-mara": "png",
   "prada-prisma": "png",
   glowguard: "png",

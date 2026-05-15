@@ -76,10 +76,10 @@ export const projects: Project[] = [
     galleryCount: 2,
   },
   {
-    slug: "unilever-karicare",
+    slug: "unilever",
     order: 3,
-    title: "Unilever Karicare",
-    titleCn: "\u8054\u5408\u5229\u534e Karicare",
+    title: "Unilever",
+    titleCn: "\u8054\u5408\u5229\u534e",
     subtitle: "Marketing strategy for Karicare infant nutrition in the China market.",
     subtitleCn: "Karicare \u5a74\u5e7c\u513f\u8425\u517b\u54c1\u4e2d\u56fd\u5e02\u573a\u8425\u9500\u7b56\u7565\u3002",
     year: "2024",
