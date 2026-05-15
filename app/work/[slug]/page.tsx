@@ -249,6 +249,14 @@ export default async function ProjectDetail({ params, searchParams }: Props) {
           >
             LinkedIn ↗
           </a>
+          <a
+            href={siteLinks.xiaohongshu}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-2 hover:text-coral"
+          >
+            {isCn ? "小红书 @BLACKBOEI ↗" : "Xiaohongshu @BLACKBOEI ↗"}
+          </a>
         </div>
       </footer>
     </main>

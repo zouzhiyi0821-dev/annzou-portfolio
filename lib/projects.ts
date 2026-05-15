@@ -98,9 +98,9 @@ export const projects: Project[] = [
     cardMeta: "N\u00ba 03 \u2014 2026 \u00b7 INTERNSHIP / SHANGHAI",
     cardMetaCn: "N\u00ba 03 \u2014 2026 \u00b7 \u5b9e\u4e60 / \u4e0a\u6d77",
     cardDesc:
-      "How to win users: Pinduoduo personal-care Top-100 SKU teardown + maternal & infant claim tracing.",
+      "Pinduoduo personal-care Top-100 SKU teardown + maternal & infant claim tracing.",
     cardDescCn:
-      "\u5982\u4f55\u5438\u5f15\u7528\u6237\uff1a\u62fc\u591a\u591a\u6d17\u62a4\u5e02\u573a Top-100 SKU \u62c6\u89e3\u4e0e\u6bcd\u5a74\u5e02\u573a Claims \u6eaf\u6e90\u3002",
+      "\u62fc\u591a\u591a\u6d17\u62a4\u5e02\u573a Top-100 SKU \u62c6\u89e3\u4e0e\u6bcd\u5a74\u5e02\u573a Claims \u6eaf\u6e90\u3002",
     cardTags: ["DATA", "BRAND", "COMPETITOR"],
     cardTagsCn: ["\u6570\u636e", "\u54c1\u724c", "\u7ade\u54c1"],
     galleryCount: 2,

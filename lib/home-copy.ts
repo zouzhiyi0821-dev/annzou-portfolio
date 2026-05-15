@@ -49,7 +49,8 @@ export const homeCopy: Record<Lang, HomeCopy> = {
       edition: "English Edition",
       subtitle: "Zhiyi Zou — Multi-disciplinary practice across fashion,\nbusiness, and AI.",
       manifestoLabel: "01 — Manifesto",
-      manifesto: "From cutting table to trading desk to terminal. Same hand, sharper output — every line earns its place.",
+      manifesto:
+        "From the sewing machine to commercial strategy to the shop floor.\nSame hand, sharper edge — every line earns its place.",
       availableLabel: "Available — Nov '26",
       availableValue: "Marketing · Branding · AI",
       scroll: "Scroll ↓",
@@ -117,7 +118,7 @@ export const homeCopy: Record<Lang, HomeCopy> = {
       edition: "中文版",
       subtitle: "邹芷仪 · Zhiyi Zou — 时尚设计 × 商业策略 × AI 原生创作",
       manifestoLabel: "01 — 宣言",
-      manifesto: "裁床出身，交易厅打磨。写提示词像走线——每一句都有落点。",
+      manifesto: "从缝纫机到商业策略，再到终端。\n笔触未变，锋芒更甚 —— 每一行都自有其位",
       availableLabel: "开放求职 — 2026",
       availableValue: "接受全职 / 实习",
       scroll: "向下滚动 ↓",

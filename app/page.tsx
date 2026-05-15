@@ -77,7 +77,9 @@ export default async function Home({ searchParams }: Props) {
                     <p className="mb-2 text-[11px] uppercase tracking-widest text-muted">
                       {copy.hero.manifestoLabel}
                     </p>
-                    <p className={`text-sm italic leading-relaxed ${serif}`}>{copy.hero.manifesto}</p>
+                    <p className={`whitespace-pre-line text-sm italic leading-relaxed ${serif}`}>
+                      {copy.hero.manifesto}
+                    </p>
                   </div>
                   <div>
                     <p className="text-[11px] uppercase tracking-widest text-muted">
@@ -122,7 +124,7 @@ export default async function Home({ searchParams }: Props) {
         </div>
       </section>
 
-      <section id="work" className="border-b border-hairline bg-cream px-16 py-16">
+      <section id="work" className="border-b border-hairline bg-cream px-6 py-12 md:px-16 md:py-16">
         <div className="mb-8 flex items-end justify-between border-b border-hairline pb-4 text-[11px] uppercase tracking-widest text-muted">
           <span>03</span>
           <span>{copy.work.section}</span>
