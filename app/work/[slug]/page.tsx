@@ -98,9 +98,20 @@ export default async function ProjectDetail({ params, searchParams }: Props) {
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-widest text-muted">{labels.live}</p>
-            <p className={`mt-2 text-2xl font-bold text-accent md:text-3xl ${serif}`}>
-              {detail.meta.linkStatus}
-            </p>
+            {project.links[0] ? (
+              <a
+                href={project.links[0].url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`mt-2 inline-block text-2xl font-bold text-accent underline-offset-4 hover:underline md:text-3xl ${serif}`}
+              >
+                {isCn ? project.links[0].labelCn : project.links[0].label} ↗
+              </a>
+            ) : (
+              <p className={`mt-2 text-2xl font-bold text-accent md:text-3xl ${serif}`}>
+                {detail.meta.linkStatus}
+              </p>
+            )}
           </div>
         </div>
       </section>

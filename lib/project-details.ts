@@ -141,27 +141,27 @@ const blocks: Record<string, { en: DetailBlock; cn: DetailBlock }> = {
       meta: {
         date: "2024 — 2026",
         category: "快消策略实习",
-        keywords: "SKU / 宣称 / 竞品",
+        keywords: "SKU / Claims / 竞品",
         linkStatus: "内部项目 (无外链)",
       },
       sectionCode: "003 UNILEVER",
       problem:
-        "高端母婴市场 SKU 众多、宣称复杂，品牌需要快速拆解竞品结构与宣称逻辑，支撑策略决策。",
+        "高端母婴市场 SKU 众多、Claims 复杂，品牌需要快速拆解竞品结构与 Claims 逻辑，支撑策略决策。",
       role: [
-        "Top-100 SKU 拆解与宣称溯源，建立可检索的竞品数据库。",
+        "Top-100 SKU 拆解与 Claims 溯源，建立可检索的竞品数据库。",
         "输出策略层可读的结构化洞察，支持市场与品牌团队讨论。",
       ],
       processSteps: [
         { title: "扫描", body: "梳理渠道与 SKU 清单，确定监测范围与优先级。" },
-        { title: "聚类", body: "按价格带、功效与宣称维度聚类，看清竞争格局。" },
-        { title: "追踪", body: "持续更新宣称与包装变化，标记异常与机会。" },
+        { title: "聚类", body: "按价格带、功效与 Claims 维度聚类，看清竞争格局。" },
+        { title: "追踪", body: "持续更新 Claims 与包装变化，标记异常与机会。" },
         { title: "简报", body: "周报式输出：结构图 + 关键发现 + 策略提示。" },
       ],
-      outcomeQuote: "把分散的 SKU 与宣称信息，变成团队每周都能打开的竞争地图。",
+      outcomeQuote: "把分散的 SKU 与 Claims 信息，变成团队每周都能打开的竞争地图。",
       metrics: [
         { value: "+25%", label: "决策效率", accent: true },
         { value: "Top-100", label: "SKU 覆盖" },
-        { value: "100+", label: "宣称条目" },
+        { value: "100+", label: "Claims 条目" },
       ],
     },
     en: {

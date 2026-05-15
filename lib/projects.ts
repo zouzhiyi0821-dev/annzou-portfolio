@@ -50,7 +50,7 @@ export const projects: Project[] = [
     cardDescCn: "\u5973\u88c5\u4f11\u95f2\u5b63\u5ea6\u8d8b\u52bf\u3001\u8272\u5f69\u4e0e\u4e3b\u9898\uff1b\u54c1\u7c7b\u63d0\u5347\u7ea6 15%\u3002",
     cardTags: ["TREND", "MERCHANDISE", "VISUAL"],
     cardTagsCn: ["\u8d8b\u52bf", "\u5546\u54c1", "\u89c6\u89c9"],
-    galleryCount: 2,
+    galleryCount: 3,
   },
   {
     slug: "amillex-geo",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     cardDescCn: "Vibe coding \u642d\u5efa GEO \u4eea\u8868\u76d8\uff0c\u5ba1\u8ba1 AI \u5f15\u64ce\u5982\u4f55\u5f15\u7528\u5ba2\u6237\u3002",
     cardTags: ["GEO", "AI AUDIT", "VIBE CODING"],
     cardTagsCn: ["GEO", "AI \u5ba1\u8ba1", "VIBE CODING"],
-    galleryCount: 2,
+    galleryCount: 1,
   },
   {
     slug: "unilever",
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     cardMeta: "N\u00ba 03 \u2014 2026 \u00b7 INTERNSHIP / SHANGHAI",
     cardMetaCn: "N\u00ba 03 \u2014 2026 \u00b7 \u5b9e\u4e60 / \u4e0a\u6d77",
     cardDesc: "Top-100 SKU disassembly + claim tracing for the high-end maternal & infant market.",
-    cardDescCn: "\u9ad8\u7aef\u6bcd\u5a74\u5e02\u573a Top-100 SKU \u62c6\u89e3\u4e0e\u5ba3\u79f0\u6eaf\u6e90\u3002",
+    cardDescCn: "\u9ad8\u7aef\u6bcd\u5a74\u5e02\u573a Top-100 SKU \u62c6\u89e3\u4e0e Claims \u6eaf\u6e90\u3002",
     cardTags: ["DATA", "BRAND", "COMPETITOR"],
     cardTagsCn: ["\u6570\u636e", "\u54c1\u724c", "\u7ade\u54c1"],
     galleryCount: 2,
@@ -126,7 +126,6 @@ export const projects: Project[] = [
     cardDescCn: "\u5962\u4f88\u54c1\u7535\u5546 KOL \u8fd0\u8425\u3001\u793e\u5a92 SOP \u4e0e\u7ade\u54c1\u76d1\u63a7\u3002",
     cardTags: ["KOL", "LUXURY", "E-COMMERCE"],
     cardTagsCn: ["KOL", "\u5962\u4f88\u54c1", "\u7535\u5546"],
-    galleryCount: 2,
   },
   {
     slug: "prada-prisma",
@@ -157,7 +156,6 @@ export const projects: Project[] = [
     cardDescCn: "Prada Beauty \u53ef\u7a7f\u6234\u865a\u5b9e\u878d\u5408\u9999\u6c1b \u2014 \u6b27\u83b1\u96c5 Brandstorm 2026\u3002",
     cardTags: ["BRANDSTORM", "ESG", "INNOVATION"],
     cardTagsCn: ["BRANDSTORM", "ESG", "\u521b\u65b0"],
-    galleryCount: 2,
   },
   {
     slug: "glowguard",
@@ -186,7 +184,7 @@ export const projects: Project[] = [
     cardDescCn: "\u9632\u6652\u4ece\u8d1f\u62c5\u91cd\u5851\u4e3a\u5065\u5eb7\u4eea\u5f0f\u3002",
     cardTags: ["BRAND", "WELLNESS", "SOCIAL"],
     cardTagsCn: ["\u54c1\u724c", "\u5065\u5eb7", "\u793e\u5a92"],
-    galleryCount: 2,
+    galleryCount: 3,
   },
   {
     slug: "space-penguin",
@@ -209,7 +207,7 @@ export const projects: Project[] = [
     cardDescCn: "Space Penguin \u865a\u62df\u5171\u4eab\u529e\u516c\u54c1\u724c\u7b56\u7565\u4e0e\u6fb3\u6d32\u7ade\u54c1\u5730\u56fe\u3002",
     cardTags: ["STRATEGY", "SOCIAL", "COWORKING"],
     cardTagsCn: ["\u7b56\u7565", "\u793e\u5a92", "\u5171\u4eab\u529e\u516c"],
-    galleryCount: 1,
+    galleryCount: 3,
   },
   {
     slug: "hello-mom",
@@ -238,7 +236,6 @@ export const projects: Project[] = [
     cardDescCn: "\u5370\u5c3c\u6309\u9700\u6258\u80b2\u5e73\u53f0 \u2014 \u6089\u5c3c\u5927\u5b66 MARD \u884c\u4e1a\u8d5b\u7b2c\u56db\u540d\u3002",
     cardTags: ["COURSE", "BUSINESS", "SOCIAL IMPACT"],
     cardTagsCn: ["\u8bfe\u7a0b", "\u5546\u4e1a", "\u793e\u4f1a\u5f71\u54cd"],
-    galleryCount: 2,
   },
   {
     slug: "fear-of-death",
