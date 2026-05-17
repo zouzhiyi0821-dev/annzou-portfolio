@@ -27,13 +27,30 @@ export function DetailHeroCover({ src, alt, cropKey }: Props) {
     );
   }
 
+  if (crop.objectFit === "contain") {
+    return (
+      <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden bg-cream-deep">
+        <Image
+          src={src}
+          alt={alt}
+          width={2400}
+          height={1350}
+          className="max-h-full max-w-full object-contain"
+          sizes="100vw"
+          priority
+          onError={() => setFailed(true)}
+        />
+      </div>
+    );
+  }
+
   return (
     <div className="relative aspect-video w-full overflow-hidden bg-cream-deep">
       <Image
         src={src}
         alt={alt}
         fill
-        className={crop.objectFit === "contain" ? "object-contain" : "object-cover"}
+        className="object-cover"
         style={{
           objectPosition: crop.objectPosition ?? "center center",
           transform: crop.scale ? `scale(${crop.scale})` : undefined,

@@ -93,7 +93,7 @@ const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
   glowguard: {
     containerClass: "flex flex-col gap-5",
     tiles: [
-      { index: 1, aspect: "3 / 4", fit: "cover", objectPosition: "50% 44%", scale: 1.1 },
+      { index: 1, aspect: "3 / 4", fit: "cover", objectPosition: "50% 54%", scale: 1.18 },
       { index: 2, aspect: "3 / 4", fit: "contain", intrinsic: true },
       { index: 3, aspect: "21 / 9", fit: "cover", objectPosition: "50% 50%", scale: 1.05 },
     ],
