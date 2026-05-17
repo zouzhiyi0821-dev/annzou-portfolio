@@ -297,5 +297,8 @@ export const projects: Project[] = [
 export const siteLinks = {
   linkedin: "https://www.linkedin.com/in/zhiyi-zou-76bb70327",
   xiaohongshu: "https://www.xiaohongshu.com/user/profile/59a5895982ec391dbffa466b",
-  email: "z15281908190@163.com",
+  /** Overseas — Gmail */
+  emailGmail: "zouzhiyi0821@gmail.com",
+  /** Mainland China — 163 */
+  email163: "z15281908190@163.com",
 };

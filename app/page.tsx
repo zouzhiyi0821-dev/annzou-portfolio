@@ -180,13 +180,31 @@ export default async function Home({ searchParams }: Props) {
         <div className="mt-12 grid gap-12 lg:grid-cols-[1fr_320px]">
           <div>
             <p className="text-[11px] uppercase tracking-widest text-muted">{copy.contact.emailLabel}</p>
-            <a
-              href={`mailto:${siteLinks.email}`}
-              className={`mt-3 block text-[clamp(32px,5vw,56px)] font-bold italic hover:text-accent ${serif}`}
-            >
-              {siteLinks.email}
-            </a>
-            <p className={`mt-4 max-w-lg text-base italic text-muted ${serif}`}>{copy.contact.emailNote}</p>
+            <div className="mt-6 space-y-8">
+              <div>
+                <p className="text-[11px] uppercase tracking-widest text-muted">
+                  {lang === "cn" ? "Gmail · 海外" : "Gmail · overseas"}
+                </p>
+                <a
+                  href={`mailto:${siteLinks.emailGmail}`}
+                  className={`mt-3 block text-[clamp(28px,4.5vw,52px)] font-bold italic hover:text-accent ${serif}`}
+                >
+                  {siteLinks.emailGmail}
+                </a>
+              </div>
+              <div>
+                <p className="text-[11px] uppercase tracking-widest text-muted">
+                  {lang === "cn" ? "163 · 中国大陆" : "163 · Mainland China"}
+                </p>
+                <a
+                  href={`mailto:${siteLinks.email163}`}
+                  className={`mt-3 block text-[clamp(28px,4.5vw,52px)] font-bold italic hover:text-accent ${serif}`}
+                >
+                  {siteLinks.email163}
+                </a>
+              </div>
+            </div>
+            <p className={`mt-6 max-w-lg text-base italic text-muted ${serif}`}>{copy.contact.emailNote}</p>
           </div>
           <div>
             <p className="text-[11px] uppercase tracking-widest text-muted">{copy.contact.linksLabel}</p>

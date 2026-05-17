@@ -237,10 +237,29 @@ export default async function ProjectDetail({ params, searchParams }: Props) {
             </>
           )}
         </p>
-        <div className="mt-8 flex flex-wrap gap-6 text-sm">
-          <a href={`mailto:${siteLinks.email}`} className="underline underline-offset-2 hover:text-coral">
-            {siteLinks.email}
-          </a>
+        <div className="mt-8 flex flex-col gap-3 text-sm">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <a
+              href={`mailto:${siteLinks.emailGmail}`}
+              className="underline underline-offset-2 hover:text-coral"
+            >
+              {siteLinks.emailGmail}
+            </a>
+            <span className="text-xs text-muted">
+              {isCn ? "Gmail · 海外" : "Gmail · overseas"}
+            </span>
+          </div>
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+            <a
+              href={`mailto:${siteLinks.email163}`}
+              className="underline underline-offset-2 hover:text-coral"
+            >
+              {siteLinks.email163}
+            </a>
+            <span className="text-xs text-muted">
+              {isCn ? "163 · 中国大陆" : "163 · Mainland China"}
+            </span>
+          </div>
           <a
             href={siteLinks.linkedin}
             target="_blank"

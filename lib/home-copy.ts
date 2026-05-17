@@ -102,7 +102,8 @@ export const homeCopy: Record<Lang, HomeCopy> = {
       meta: "End of issue",
       title: ["Let's make", "something."],
       emailLabel: "· Email — say hi",
-      emailNote: "Drop a brief, a link, or a 2 a.m. idea. I reply within 24h — always in plain language, always with a point of view.",
+      emailNote:
+        "Overseas → Gmail. Mainland China → 163. Drop a brief, a link, or a 2 a.m. idea. I reply within 24h.",
       linksLabel: "· Around the web",
       linkedin: "LinkedIn ↗",
       xhs: "Xiaohongshu @BLACKBOEI ↗",
@@ -170,7 +171,7 @@ export const homeCopy: Record<Lang, HomeCopy> = {
       meta: "本期结束",
       title: ["一起", "做点什么。"],
       emailLabel: "· 邮件",
-      emailNote: "欢迎项目简介、链接，或凌晨两点的想法。24 小时内回复。",
+      emailNote: "海外请用 Gmail；中国大陆请用 163 邮箱。欢迎项目简介、链接，或凌晨两点的想法。24 小时内回复。",
       linksLabel: "· 线上",
       linkedin: "LinkedIn ↗",
       xhs: "小红书 @BLACKBOEI ↗",
