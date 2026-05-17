@@ -198,6 +198,30 @@ function GalleryTile({ src, spec }: { src: string; spec: GalleryTileSpec }) {
     );
   }
 
+  if (fit === "cover" && spec.stretchCover) {
+    return (
+      <div
+        className={[
+          "relative h-full min-h-[280px] w-full overflow-hidden bg-cream-deep",
+          spec.className ?? "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        <Image
+          src={src}
+          alt=""
+          fill
+          unoptimized={gallerySrcNeedsUnoptimized(src)}
+          className="object-cover"
+          style={{ objectPosition: spec.objectPosition ?? "center center" }}
+          sizes="(max-width: 768px) 100vw, 50vw"
+          onError={() => setFailed(true)}
+        />
+      </div>
+    );
+  }
+
   const boxClass = ["relative w-full overflow-hidden bg-cream-deep", spec.className ?? ""]
     .filter(Boolean)
     .join(" ");

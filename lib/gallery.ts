@@ -41,6 +41,8 @@ export type GalleryTileSpec = {
   fit?: "cover" | "contain";
   /** Full image visible; frame height follows image (no crop). */
   intrinsic?: boolean;
+  /** Fill grid cell height with cover (no letterboxing). */
+  stretchCover?: boolean;
   objectPosition?: string;
 };
 
@@ -102,7 +104,21 @@ const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
       { index: 3, aspect: "3 / 4" },
     ],
   },
-  "hello-mom": flatGridLayout(4),
+  "hello-mom": {
+    containerClass: "grid grid-cols-1 items-stretch gap-5 md:grid-cols-2",
+    tiles: [
+      flatTile(1),
+      flatTile(2),
+      {
+        index: 3,
+        aspect: "4 / 3",
+        fit: "cover",
+        stretchCover: true,
+        objectPosition: "50% 42%",
+      },
+      flatTile(4),
+    ],
+  },
   "prada-prisma": {
     containerClass: "grid grid-cols-1 gap-5 md:grid-cols-2",
     tiles: [flatTile(1, "md:col-span-2")],
