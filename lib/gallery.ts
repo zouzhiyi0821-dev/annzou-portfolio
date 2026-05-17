@@ -66,6 +66,17 @@ function flatGridLayout(count: number): GalleryLayoutSpec {
   };
 }
 
+function squareTile(index: number): GalleryTileSpec {
+  return { index, aspect: "1 / 1", fit: "cover" };
+}
+
+function squareGridLayout(count: number): GalleryLayoutSpec {
+  return {
+    containerClass: "grid grid-cols-1 gap-5 md:grid-cols-2",
+    tiles: Array.from({ length: count }, (_, i) => squareTile(i + 1)),
+  };
+}
+
 const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
   semir: {
     containerClass: "grid grid-cols-2 gap-5",
@@ -96,7 +107,7 @@ const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
     containerClass: "grid grid-cols-1 gap-5 md:grid-cols-2",
     tiles: [flatTile(1, "md:col-span-2")],
   },
-  stylist: flatGridLayout(6),
+  stylist: squareGridLayout(6),
   "fear-of-death": {
     containerClass: "flex flex-col gap-5",
     tiles: [

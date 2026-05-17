@@ -44,7 +44,7 @@ Filenames are listed in `lib/gallery.ts` (`GALLERY_FILES`). Extensions can be **
 | `fear-of-death/` | `01.jpg`, `02.jpg`, `03.png` … `08.png` | 8 |
 | `semir/`, `glowguard/`, etc. | see `lib/gallery.ts` | — |
 
-Hello! MoM, Prada Prisma, and Stylist use a **2-column flat layout** (`object-contain`, no crop).
+Hello! MoM and Prada Prisma use a **2-column flat layout** (`object-contain`, no crop). Stylist uses **2-column square tiles** (`1:1`, `object-cover`).
 
 Recommended export: **min 1080px** wide; JPG/JFIF quality 80–85 or PNG for decks.
 
