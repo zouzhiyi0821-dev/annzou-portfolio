@@ -34,18 +34,19 @@ Cover extensions match `lib/covers.ts`. Detail heroes are always **`detail/{slug
 
 ## Gallery (`public/images/gallery/{slug}/`)
 
-Numbered stills, zero-padded: `01`, `02`, …
+Filenames are listed in `lib/gallery.ts` (`GALLERY_FILES`). Extensions can be **`.jpg`**, **`.png`**, or **`.jfif`** — use the exact name in code.
 
-| Folder | Ext | Count (in data) |
-|--------|-----|-----------------|
-| `fear-of-death/` | `.jpg` | 2 |
-| `space-penguin/` | `.png` | 1 |
-| `stylist/` | `.jpg` | 4 |
-| Others | `.jpg` (`.png` for `space-penguin` only) | add as needed |
+| Folder | Files (order = display order) | Count |
+|--------|-------------------------------|-------|
+| `hello-mom/` | `01.jfif` … `04.jfif` | 4 |
+| `prada-prisma/` | `01.jfif` | 1 |
+| `stylist/` | `01.jfif`, `01.png`, `02.jfif`, `04.jpg`, `02.jpg`, `03.jpg` | 6 |
+| `fear-of-death/` | `01.jpg`, `02.jpg` | 2 |
+| `semir/`, `glowguard/`, etc. | see `lib/gallery.ts` | — |
 
-Example: `public/images/gallery/stylist/01.jpg` … `04.jpg`
+Hello! MoM, Prada Prisma, and Stylist use a **2-column flat layout** (`object-contain`, no crop).
 
-Recommended export: **min 1080px** wide, JPG quality 80–85 or PNG for flat UI decks.
+Recommended export: **min 1080px** wide; JPG/JFIF quality 80–85 or PNG for decks.
 
 ## Quick replace workflow
 

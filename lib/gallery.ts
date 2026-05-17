@@ -1,11 +1,13 @@
-/** Explicit gallery filenames per project (supports mixed .jpg / .png) */
+/** Explicit gallery filenames per project (supports mixed .jpg / .png / .jfif) */
 const GALLERY_FILES: Record<string, string[]> = {
   semir: ["01.png", "02.jpg", "03.png"],
   "amillex-geo": ["01.png"],
   "fear-of-death": ["01.jpg", "02.jpg"],
   glowguard: ["01.png", "02.png", "03.png"],
   "space-penguin": ["01.png", "02.jpg", "03.jpg"],
-  stylist: ["01.png", "02.jpg", "03.jpg", "04.jpg"],
+  "hello-mom": ["01.jfif", "02.jfif", "03.jfif", "04.jfif"],
+  "prada-prisma": ["01.jfif"],
+  stylist: ["01.jfif", "01.png", "02.jfif", "04.jpg", "02.jpg", "03.jpg"],
   unilever: ["01.png", "02.png"],
 };
 
@@ -36,6 +38,24 @@ export type GalleryLayoutSpec = {
   tiles: GalleryTileSpec[];
 };
 
+const FLAT_FRAME = "min-h-[280px] md:min-h-[320px]";
+
+function flatTile(index: number, className?: string): GalleryTileSpec {
+  return {
+    index,
+    aspect: "4 / 3",
+    fit: "contain",
+    className: [FLAT_FRAME, className].filter(Boolean).join(" "),
+  };
+}
+
+function flatGridLayout(count: number): GalleryLayoutSpec {
+  return {
+    containerClass: "grid grid-cols-1 gap-5 md:grid-cols-2",
+    tiles: Array.from({ length: count }, (_, i) => flatTile(i + 1)),
+  };
+}
+
 const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
   semir: {
     containerClass: "grid grid-cols-2 gap-5",
@@ -61,6 +81,12 @@ const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
       { index: 3, aspect: "3 / 4" },
     ],
   },
+  "hello-mom": flatGridLayout(4),
+  "prada-prisma": {
+    containerClass: "grid grid-cols-1 gap-5 md:grid-cols-2",
+    tiles: [flatTile(1, "md:col-span-2 min-h-[min(56vw,420px)] md:min-h-[400px]")],
+  },
+  stylist: flatGridLayout(6),
 };
 
 export function galleryLayoutFor(slug: string, count: number): GalleryLayoutSpec | null {

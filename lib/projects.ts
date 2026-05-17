@@ -163,6 +163,7 @@ export const projects: Project[] = [
     cardDescCn: "Prada Beauty \u53ef\u7a7f\u6234\u865a\u5b9e\u878d\u5408\u9999\u6c1b \u2014 \u6b27\u83b1\u96c5 Brandstorm 2026\u3002",
     cardTags: ["BRANDSTORM", "ESG", "INNOVATION"],
     cardTagsCn: ["BRANDSTORM", "ESG", "\u521b\u65b0"],
+    galleryCount: 1,
   },
   {
     slug: "glowguard",
@@ -243,6 +244,7 @@ export const projects: Project[] = [
     cardDescCn: "\u5370\u5c3c\u6309\u9700\u6258\u80b2\u5e73\u53f0 \u2014 \u6089\u5c3c\u5927\u5b66 MARD \u884c\u4e1a\u8d5b\u7b2c\u56db\u540d\u3002",
     cardTags: ["COURSE", "BUSINESS", "SOCIAL IMPACT"],
     cardTagsCn: ["\u8bfe\u7a0b", "\u5546\u4e1a", "\u793e\u4f1a\u5f71\u54cd"],
+    galleryCount: 4,
   },
   {
     slug: "fear-of-death",
@@ -288,7 +290,7 @@ export const projects: Project[] = [
     cardDescCn: "\u7efc\u827a\u3001\u5e7f\u544a\u7247\u4e0e\u77ed\u5267\u9020\u578b \u2014 \u4ece\u540e\u53f0\u5230\u6210\u7247\u3002",
     cardTags: ["STYLING", "TV", "FASHION"],
     cardTagsCn: ["\u9020\u578b", "\u5f71\u89c6", "\u65f6\u88c5"],
-    galleryCount: 4,
+    galleryCount: 6,
   },
 ];
 
