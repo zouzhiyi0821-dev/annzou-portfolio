@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import {
   galleryImagePath,
   galleryLayoutFor,
@@ -163,6 +163,13 @@ function gallerySrcNeedsUnoptimized(src: string): boolean {
   return /\.jfif$/i.test(src);
 }
 
+function galleryImageStyle(spec: GalleryTileSpec): CSSProperties {
+  return {
+    objectPosition: spec.objectPosition ?? "center center",
+    transform: spec.scale ? `scale(${spec.scale})` : undefined,
+  };
+}
+
 function GalleryTile({ src, spec }: { src: string; spec: GalleryTileSpec }) {
   const [failed, setFailed] = useState(false);
   const fit = spec.fit ?? "cover";
@@ -237,7 +244,7 @@ function GalleryTile({ src, spec }: { src: string; spec: GalleryTileSpec }) {
         fill
         unoptimized={gallerySrcNeedsUnoptimized(src)}
         className={fit === "contain" ? "object-contain" : "object-cover"}
-        style={{ objectPosition: spec.objectPosition ?? "center center" }}
+        style={galleryImageStyle(spec)}
         sizes="(max-width: 768px) 100vw, 50vw"
         onError={() => setFailed(true)}
       />

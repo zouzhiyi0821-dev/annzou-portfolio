@@ -44,6 +44,8 @@ export type GalleryTileSpec = {
   /** Fill grid cell height with cover (no letterboxing). */
   stretchCover?: boolean;
   objectPosition?: string;
+  /** Zoom to crop letterboxing baked into assets */
+  scale?: number;
 };
 
 export type GalleryLayoutSpec = {
@@ -91,9 +93,9 @@ const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
   glowguard: {
     containerClass: "flex flex-col gap-5",
     tiles: [
-      { index: 1, aspect: "3 / 4" },
-      { index: 2, aspect: "3 / 4" },
-      { index: 3, aspect: "21 / 9" },
+      { index: 1, aspect: "3 / 4", fit: "cover", objectPosition: "50% 44%", scale: 1.2 },
+      { index: 2, aspect: "3 / 4", fit: "cover", objectPosition: "50% 50%", scale: 1.1 },
+      { index: 3, aspect: "21 / 9", fit: "cover", objectPosition: "50% 48%", scale: 1.14 },
     ],
   },
   "space-penguin": {

@@ -34,7 +34,10 @@ export function DetailHeroCover({ src, alt, cropKey }: Props) {
         alt={alt}
         fill
         className="object-cover"
-        style={{ objectPosition: crop.objectPosition ?? "center center" }}
+        style={{
+          objectPosition: crop.objectPosition ?? "center center",
+          transform: crop.scale ? `scale(${crop.scale})` : undefined,
+        }}
         sizes="100vw"
         priority
         onError={() => setFailed(true)}
