@@ -41,7 +41,7 @@ Filenames are listed in `lib/gallery.ts` (`GALLERY_FILES`). Extensions can be **
 | `hello-mom/` | `01.jfif` … `04.jfif` | 4 |
 | `prada-prisma/` | `01.jfif` | 1 |
 | `stylist/` | `01.jfif`, `01.png`, `02.jfif`, `04.jpg`, `02.jpg`, `03.jpg` | 6 |
-| `fear-of-death/` | `01.jpg`, `02.jpg` | 2 |
+| `fear-of-death/` | `01.jpg`, `02.jpg`, `03.png` … `08.png` | 8 |
 | `semir/`, `glowguard/`, etc. | see `lib/gallery.ts` | — |
 
 Hello! MoM, Prada Prisma, and Stylist use a **2-column flat layout** (`object-contain`, no crop).

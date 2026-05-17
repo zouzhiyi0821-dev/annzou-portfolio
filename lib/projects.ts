@@ -267,7 +267,7 @@ export const projects: Project[] = [
     cardDescCn: "BFA \u6bd5\u4e1a\u7cfb\u5217\uff0c\u4ee5\u65f6\u88c5\u63a2\u8ba8\u751f\u6b7b\u8bae\u9898\u3002",
     cardTags: ["FASHION", "BFA", "COLLECTION"],
     cardTagsCn: ["\u65f6\u88c5", "BFA", "\u7cfb\u5217"],
-    galleryCount: 2,
+    galleryCount: 8,
   },
   {
     slug: "stylist",

@@ -2,7 +2,16 @@
 const GALLERY_FILES: Record<string, string[]> = {
   semir: ["01.png", "02.jpg", "03.png"],
   "amillex-geo": ["01.png"],
-  "fear-of-death": ["01.jpg", "02.jpg"],
+  "fear-of-death": [
+    "01.jpg",
+    "02.jpg",
+    "03.png",
+    "04.png",
+    "05.png",
+    "06.png",
+    "07.png",
+    "08.png",
+  ],
   glowguard: ["01.png", "02.png", "03.png"],
   "space-penguin": ["01.png", "02.jpg", "03.jpg"],
   "hello-mom": ["01.jfif", "02.jfif", "03.jfif", "04.jfif"],
@@ -30,6 +39,8 @@ export type GalleryTileSpec = {
   aspect: string;
   className?: string;
   fit?: "cover" | "contain";
+  /** Full image visible; frame height follows image (no crop). */
+  intrinsic?: boolean;
   objectPosition?: string;
 };
 
@@ -38,14 +49,13 @@ export type GalleryLayoutSpec = {
   tiles: GalleryTileSpec[];
 };
 
-const FLAT_FRAME = "min-h-[280px] md:min-h-[320px]";
-
 function flatTile(index: number, className?: string): GalleryTileSpec {
   return {
     index,
-    aspect: "4 / 3",
+    aspect: "auto",
     fit: "contain",
-    className: [FLAT_FRAME, className].filter(Boolean).join(" "),
+    intrinsic: true,
+    className,
   };
 }
 
@@ -84,9 +94,22 @@ const GALLERY_LAYOUTS: Record<string, GalleryLayoutSpec> = {
   "hello-mom": flatGridLayout(4),
   "prada-prisma": {
     containerClass: "grid grid-cols-1 gap-5 md:grid-cols-2",
-    tiles: [flatTile(1, "md:col-span-2 min-h-[min(56vw,420px)] md:min-h-[400px]")],
+    tiles: [flatTile(1, "md:col-span-2")],
   },
   stylist: flatGridLayout(6),
+  "fear-of-death": {
+    containerClass: "flex flex-col gap-5",
+    tiles: [
+      { index: 1, aspect: "3 / 4", fit: "contain", intrinsic: true },
+      { index: 2, aspect: "3 / 4", fit: "contain", intrinsic: true },
+      { index: 3, aspect: "auto", fit: "contain", intrinsic: true },
+      { index: 4, aspect: "auto", fit: "contain", intrinsic: true },
+      { index: 5, aspect: "auto", fit: "contain", intrinsic: true },
+      { index: 6, aspect: "auto", fit: "contain", intrinsic: true },
+      { index: 7, aspect: "auto", fit: "contain", intrinsic: true },
+      { index: 8, aspect: "auto", fit: "contain", intrinsic: true },
+    ],
+  },
 };
 
 export function galleryLayoutFor(slug: string, count: number): GalleryLayoutSpec | null {
@@ -114,5 +137,5 @@ export function galleryLayoutFor(slug: string, count: number): GalleryLayoutSpec
 }
 
 export function isSplitRowLayout(slug: string): boolean {
-  return slug === "glowguard" || slug === "space-penguin";
+  return slug === "glowguard" || slug === "space-penguin" || slug === "fear-of-death";
 }

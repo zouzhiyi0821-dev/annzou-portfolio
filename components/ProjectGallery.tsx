@@ -127,6 +127,27 @@ function SplitRowGallery({
     );
   }
 
+  if (slug === "fear-of-death") {
+    const pair = spec.tiles.filter((t) => t.index <= 2);
+    const stack = spec.tiles.filter((t) => t.index > 2);
+    return (
+      <div className="flex flex-col gap-5">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+          {pair.map((tile) => {
+            const src = paths[tile.index - 1];
+            if (!src) return null;
+            return <GalleryTile key={src} src={src} spec={tile} />;
+          })}
+        </div>
+        {stack.map((tile) => {
+          const src = paths[tile.index - 1];
+          if (!src) return null;
+          return <GalleryTile key={src} src={src} spec={tile} />;
+        })}
+      </div>
+    );
+  }
+
   return (
     <div className={spec.containerClass}>
       {spec.tiles.map((tile) => {
@@ -138,31 +159,59 @@ function SplitRowGallery({
   );
 }
 
+function gallerySrcNeedsUnoptimized(src: string): boolean {
+  return /\.jfif$/i.test(src);
+}
+
 function GalleryTile({ src, spec }: { src: string; spec: GalleryTileSpec }) {
   const [failed, setFailed] = useState(false);
   const fit = spec.fit ?? "cover";
+  const intrinsic = spec.intrinsic === true || spec.aspect === "auto";
 
-  const frameClass = ["relative w-full overflow-hidden bg-cream-deep", spec.className ?? ""]
+  const frameClass = ["w-full bg-cream-deep", spec.className ?? ""]
     .filter(Boolean)
     .join(" ");
 
   if (failed) {
     return (
       <div
-        className={`flex items-center justify-center text-[10px] uppercase tracking-widest text-muted ${frameClass}`}
-        style={{ aspectRatio: spec.aspect }}
+        className={`flex min-h-[200px] items-center justify-center text-[10px] uppercase tracking-widest text-muted ${frameClass}`}
       >
         Add image
       </div>
     );
   }
 
+  if (fit === "contain" && intrinsic) {
+    return (
+      <div className={frameClass}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt=""
+          className="block h-auto w-full object-contain"
+          loading="lazy"
+          decoding="async"
+          onError={() => setFailed(true)}
+        />
+      </div>
+    );
+  }
+
+  const boxClass = ["relative w-full overflow-hidden bg-cream-deep", spec.className ?? ""]
+    .filter(Boolean)
+    .join(" ");
+
   return (
-    <div className={frameClass} style={{ aspectRatio: spec.aspect }}>
+    <div
+      className={boxClass}
+      style={spec.aspect !== "auto" ? { aspectRatio: spec.aspect } : undefined}
+    >
       <Image
         src={src}
         alt=""
         fill
+        unoptimized={gallerySrcNeedsUnoptimized(src)}
         className={fit === "contain" ? "object-contain" : "object-cover"}
         style={{ objectPosition: spec.objectPosition ?? "center center" }}
         sizes="(max-width: 768px) 100vw, 50vw"
