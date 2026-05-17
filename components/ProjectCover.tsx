@@ -40,7 +40,7 @@ export function ProjectCover({
         fill
         priority={priority}
         loading={priority ? undefined : loading}
-        className="object-cover"
+        className={crop.objectFit === "contain" ? "object-contain" : "object-cover"}
         style={{
           objectPosition: crop.objectPosition ?? "center center",
           transform: crop.scale ? `scale(${crop.scale})` : undefined,

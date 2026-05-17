@@ -17,7 +17,7 @@ export const imageLayout: Record<string, ImageCrop> = {
   "cover:unilever": { objectPosition: "50% 50%", objectFit: "cover" },
   "cover:max-mara": { objectPosition: "50% 40%", objectFit: "cover" },
   "cover:prada-prisma": { objectPosition: "50% 45%", objectFit: "cover" },
-  "cover:glowguard": { objectPosition: "50% 44%", objectFit: "cover", scale: 1.2 },
+  "cover:glowguard": { objectPosition: "50% 50%", objectFit: "contain" },
   "cover:space-penguin": { objectPosition: "50% 50%", objectFit: "cover" },
   "cover:hello-mom": { objectPosition: "50% 72%", objectFit: "cover", scale: 1.08 },
   "cover:fear-of-death": { objectPosition: "50% 30%", objectFit: "cover" },
@@ -25,7 +25,7 @@ export const imageLayout: Record<string, ImageCrop> = {
   "cover:default": { objectPosition: "50% 50%", objectFit: "cover" },
   "detail:default": { objectPosition: "50% 50%", objectFit: "cover" },
   "detail:prada-prisma": { objectPosition: "50% 45%", objectFit: "cover" },
-  "detail:glowguard": { objectPosition: "50% 44%", objectFit: "cover", scale: 1.18 },
+  "detail:glowguard": { objectPosition: "50% 50%", objectFit: "contain" },
   "detail:hello-mom": { objectPosition: "50% 50%", objectFit: "cover" },
   "detail:space-penguin": { objectPosition: "50% 40%", objectFit: "cover" },
 };

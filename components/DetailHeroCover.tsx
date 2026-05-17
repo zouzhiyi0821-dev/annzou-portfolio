@@ -33,7 +33,7 @@ export function DetailHeroCover({ src, alt, cropKey }: Props) {
         src={src}
         alt={alt}
         fill
-        className="object-cover"
+        className={crop.objectFit === "contain" ? "object-contain" : "object-cover"}
         style={{
           objectPosition: crop.objectPosition ?? "center center",
           transform: crop.scale ? `scale(${crop.scale})` : undefined,
